@@ -130,6 +130,7 @@ CSRCS = \
 	../libavr32/src/timers.c				\
 	../libavr32/src/usb.c					\
 	../libavr32/src/util.c					\
+	../libavr32/src/usb/cdc/cdc.c				\
 	../libavr32/src/usb/ftdi/ftdi.c				\
 	../libavr32/src/usb/ftdi/uhi_ftdi.c			\
 	../libavr32/src/usb/hid/hid.c				\
@@ -156,6 +157,7 @@ CSRCS = \
 	avr32/services/fs/fat/navigation.c			\
 	avr32/utils/debug/print_funcs.c				\
 	common/services/storage/ctrl_access/ctrl_access.c	\
+	common/services/usb/class/cdc/host/uhi_cdc.c		\
 	common/services/usb/class/msc/host/uhi_msc.c		\
 	common/services/usb/class/msc/host/uhi_msc_mem.c	\
 	common/services/spi/uc3_spi/spi_master.c		\
@@ -172,6 +174,7 @@ INC_PATH = \
 	../../src						\
 	../src							\
 	../src/usb						\
+	../src/usb/cdc						\
 	../src/usb/ftdi						\
 	../src/usb/hid						\
 	../src/usb/midi						\
@@ -202,6 +205,8 @@ INC_PATH = \
 	common/services/usb/uhc					\
 	common/services/clock					\
 	common/services/storage/ctrl_access			\
+	common/services/usb/class/cdc				\
+	common/services/usb/class/cdc/host			\
 	common/services/usb/class/msc				\
 	common/services/usb/class/msc/host			\
 	common/services/usb/class/hid				\

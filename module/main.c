@@ -565,6 +565,14 @@ void handler_AppCustom(int32_t data) {
         set_metro_icon(false);
 }
 
+static void handler_CDCConnect(s32 data) {
+    cdc_setup();
+}
+static void handler_CDCDisconnect(s32 data) {
+    grid_connected = 0;
+    timers_unset_monome();
+}
+
 static void handler_FtdiConnect(s32 data) {
     ftdi_setup();
 }
@@ -719,6 +727,8 @@ void assign_main_event_handlers() {
     app_event_handlers[kEventScreenRefresh] = &handler_ScreenRefresh;
     app_event_handlers[kEventTimer] = &handler_EventTimer;
     app_event_handlers[kEventAppCustom] = &handler_AppCustom;
+    app_event_handlers[kEventCDCConnect] = &handler_CDCConnect;
+    app_event_handlers[kEventCDCDisconnect] = &handler_CDCDisconnect;
     app_event_handlers[kEventFtdiConnect] = &handler_FtdiConnect;
     app_event_handlers[kEventFtdiDisconnect] = &handler_FtdiDisconnect;
     app_event_handlers[kEventMonomeConnect] = &handler_MonomeConnect;
