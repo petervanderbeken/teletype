@@ -287,7 +287,7 @@ void metroTimer_callback(void* o) {
 static void monome_poll_timer_callback(void* obj) {
     // asynchronous, non-blocking read
     // UHC callback spawns appropriate events
-    ftdi_read();
+    monome_read();
 }
 
 // monome refresh callback
